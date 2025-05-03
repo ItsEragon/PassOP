@@ -20,6 +20,11 @@ const Manager = () => {
 
     }
 
+    const handleChange = (e) => {
+        setform({ ...form, [e.target.name]: e.target.value })
+    }
+
+
 
     return (
         <>
@@ -33,11 +38,11 @@ const Manager = () => {
                 <p className='text-green-900 text-lg text-center'>Your own Password Manager</p>
 
                 <div className='flex flex-col p-4 text-black gap-8 items-center'>
-                    <input value={form.site} placeholder='Enter Website URL' className='bg-white rounded-full border border-green-500 w-full p-4 py-1' type="text" name="" id="" />
+                    <input value={form.site} onChange={handleChange} placeholder='Enter Website URL' className='bg-white rounded-full border border-green-500 w-full p-4 py-1' type="text" name="site" id="" />
                     <div className="flex w-full justify-between gap-8 ">
-                        <input value={form.username} placeholder='Enter Username' className='bg-white rounded-full border border-green-500 w-full p-4 py-1' type="text" name="" id="" />
+                        <input value={form.username} onChange={handleChange} placeholder='Enter Username' className='bg-white rounded-full border border-green-500 w-full p-4 py-1' type="text" name="username" id="" />
                         <div className="relative">
-                            <input value={form.password} placeholder='Enter Password' className='bg-white rounded-full border border-green-500 w-full p-4 py-1' type="text" name="" id="" />
+                            <input value={form.password} onChange={handleChange} placeholder='Enter Password' className='bg-white rounded-full border border-green-500 w-full p-4 py-1' type="text" name="password" id="" />
                             <span className='absolute right-[3px] top-[4px] cursor-pointer' onClick={showPassword}>
                                 <img ref={ref} className='p-1' width={26} src="icons/eye.png" alt="eye" />
                             </span>
