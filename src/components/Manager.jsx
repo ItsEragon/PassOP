@@ -45,7 +45,7 @@ const Manager = () => {
     }
 
     const savePassword = () => {
-        if (form.site.length > 3) {
+        if (form.site.length > 3 && form.username.length > 3 && form.password.length > 3) {
             setPasswordArray([...passwordArray, { ...form, id: uuidv4() }])
             localStorage.setItem("passwords", JSON.stringify([...passwordArray, { ...form, id: uuidv4() }]))
             setform({ site: "", username: "", password: "" })
@@ -125,7 +125,7 @@ const Manager = () => {
 
             <div className="absolute inset-0 -z-10 h-full w-full bg-green-50 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:14px_24px]"><div className="absolute left-0 right-0 top-0 -z-10 m-auto h-[310px] w-[310px] rounded-full bg-green-400 opacity-20 blur-[100px]"></div></div>
 
-            <div className="p-3 md:p-0 mycontainer min-h-[87.4vh]">
+            <div className="p-2 mt-8 md:p-0 mycontainer min-h-[87.4vh]">
                 <h1 className='text-4xl font-bold text-center'>
                     <span className='text-green-500'>&lt;</span>
                     <span>Pass</span><span className='text-green-500'>OP/&gt;
